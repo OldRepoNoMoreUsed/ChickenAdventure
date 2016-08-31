@@ -19,12 +19,7 @@ ExportedObj/
 *.booproj
 *.svd
 UnityLockFile
-ChickenAdventure\Library\metadata\
-ChickenAdventure\Library\InspectorExpandedItems.asset
-ChickenAdventure\Library\assetDatabase3
-
-
-
+/Library/
 
 # Unity3D generated meta files
 *.pidb.meta
