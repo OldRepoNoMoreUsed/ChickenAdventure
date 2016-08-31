@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/steve.unity
+- path: Assets/ChickenAdventure.unity
   isLoaded: 1
   isActive: 1
