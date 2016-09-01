@@ -3,7 +3,7 @@ using System.Collections;
 
 public abstract class MovingObject : MonoBehaviour {
 
-    public float moveTime = 0.1f;
+    public float moveTime = 0.001f;
     public LayerMask blockingLayer;
 
     private BoxCollider2D boxCollider;
@@ -15,10 +15,10 @@ public abstract class MovingObject : MonoBehaviour {
 	protected virtual void Start () {
         boxCollider = GetComponent<BoxCollider2D>();
         rb2D = GetComponent<Rigidbody2D>();
-        inverseMoveTime = 1f / moveTime;
+        inverseMoveTime = 1f / 0.5f;
 	}
 
-    protected bool Move(int xDir, int yDir, out RaycastHit2D hit)
+    protected bool Move(float xDir, float yDir, out RaycastHit2D hit)
     {
         Vector2 start = transform.position;
         Vector2 end = start + new Vector2(xDir, yDir);
@@ -29,14 +29,16 @@ public abstract class MovingObject : MonoBehaviour {
 
         if(hit.transform == null)
         {
-            StartCoroutine(SmoothMovement(end));
+            //StartCoroutine(SmoothMovement(end));
+            Vector3 newPosition = Vector3.MoveTowards(rb2D.position, end, inverseMoveTime * Time.deltaTime);
+            rb2D.MovePosition(newPosition);
             return true; 
         }
 
         return false;
     }
 
-    protected IEnumerator SmoothMovement (Vector3 end)
+    /*protected IEnumerator SmoothMovement (Vector3 end)
     {
         float sqrRemainingDistance = (transform.position - end).sqrMagnitude;
 
@@ -47,9 +49,9 @@ public abstract class MovingObject : MonoBehaviour {
             sqrRemainingDistance = (transform.position - end).sqrMagnitude;
             yield return null;
         }
-    }
+    }*/
 
-    protected virtual void AttemptMove<T>(int xDir, int yDir) where T : Component
+    protected virtual void AttemptMove<T>(float xDir, float yDir) where T : Component
     {
         RaycastHit2D hit;
         bool CanMove = Move(xDir, yDir, out hit); 
