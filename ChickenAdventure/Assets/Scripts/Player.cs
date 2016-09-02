@@ -41,7 +41,7 @@ public class Player : MovingObject {
         if (horizontal != 0 || vertical != 0)
         {
             //AttemptMove<Wall>(horizontal/5.0f, vertical/5.0f);
-            AttemptMove<Chest>(horizontal / 5.0f, vertical / 5.0f);
+            AttemptMove<Chest>(horizontal/5.0f, vertical/5.0f);
 
             if(horizontal == -1)
             {

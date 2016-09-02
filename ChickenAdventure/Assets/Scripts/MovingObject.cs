@@ -35,7 +35,6 @@ public abstract class MovingObject : MonoBehaviour {
             rb2D.MovePosition(newPosition);
             return true; 
         }
-        print(hit.ToString());
         return false;
     }
 
@@ -66,11 +65,6 @@ public abstract class MovingObject : MonoBehaviour {
         if (!CanMove && hitComponent != null)
         {
             print("Poil si tu peux pas bouger");
-            OnCantMove(hitComponent);
-        }
-
-        if (!CanMove)
-        {
             OnCantMove(hitComponent);
         }
     }
