@@ -14,6 +14,10 @@ public class Player : MovingObject {
 
 	}
 
+	void Awake () {
+		DontDestroyOnLoad (transform.gameObject);
+	}
+
     protected override void AttemptMove<T>(float xDir, float yDir)
     {
         base.AttemptMove<T>(xDir, yDir);
