@@ -29,12 +29,13 @@ public abstract class MovingObject : MonoBehaviour {
 
         if(hit.transform == null)
         {
+            
             //StartCoroutine(SmoothMovement(end));
             Vector3 newPosition = Vector3.MoveTowards(rb2D.position, end, inverseMoveTime * Time.deltaTime);
             rb2D.MovePosition(newPosition);
             return true; 
         }
-
+        print(hit.ToString());
         return false;
     }
 
@@ -61,8 +62,14 @@ public abstract class MovingObject : MonoBehaviour {
         }
 
         T hitComponent = hit.transform.GetComponent<T>();
+        
+        if (!CanMove && hitComponent != null)
+        {
+            print("Poil si tu peux pas bouger");
+            OnCantMove(hitComponent);
+        }
 
-        if(!CanMove && hitComponent != null)
+        if (!CanMove)
         {
             OnCantMove(hitComponent);
         }
