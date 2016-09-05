@@ -29,8 +29,6 @@ public abstract class MovingObject : MonoBehaviour {
 
         if(hit.transform == null)
         {
-            
-            //StartCoroutine(SmoothMovement(end));
             Vector3 newPosition = Vector3.MoveTowards(rb2D.position, end, inverseMoveTime * Time.deltaTime);
             rb2D.MovePosition(newPosition);
             return true; 
@@ -38,18 +36,6 @@ public abstract class MovingObject : MonoBehaviour {
         return false;
     }
 
-    /*protected IEnumerator SmoothMovement (Vector3 end)
-    {
-        float sqrRemainingDistance = (transform.position - end).sqrMagnitude;
-
-        while(sqrRemainingDistance > float.Epsilon)
-        {
-            Vector3 newPosition = Vector3.MoveTowards(rb2D.position, end, inverseMoveTime * Time.deltaTime);
-            rb2D.MovePosition(newPosition);
-            sqrRemainingDistance = (transform.position - end).sqrMagnitude;
-            yield return null;
-        }
-    }*/
 
     protected virtual void AttemptMove<T>(float xDir, float yDir) where T : Component
     {
@@ -64,7 +50,6 @@ public abstract class MovingObject : MonoBehaviour {
         
         if (!CanMove && hitComponent != null)
         {
-            print("Poil si tu peux pas bouger");
             OnCantMove(hitComponent);
         }
     }

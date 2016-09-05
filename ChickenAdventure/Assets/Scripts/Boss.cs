@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Wall : Items {
+public class Boss : Items{
 
 	// Use this for initialization
 	void Start () {
-        setId(3);
+        setId(2);
 	}
 	
 	// Update is called once per frame
-	void onUse () {
-        print("Tu heurtes un mur");
+	public void onUse () {
+        print("Tu touches le boss !");
 	}
 }
