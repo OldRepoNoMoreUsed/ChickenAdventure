@@ -18,6 +18,11 @@ public class Chest : Items {
         {
             animator.SetTrigger("Open");
             print("Tu ouvres un coffre");
+            open = true;
+        }
+        else
+        {
+            print("Coffre déja ouvert");
         }
     }
 }
