@@ -19,7 +19,7 @@ ExportedObj/
 *.booproj
 *.svd
 UnityLockFile
-/Library/
+ChickenAdventure/Library/
 
 # Unity3D generated meta files
 *.pidb.meta

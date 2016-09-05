@@ -3,12 +3,9 @@ using System.Collections;
 
 public class BatonSorcier : Arme {
 
-	public BatonSorcier () {
-        setDmg(5);
+	public BatonSorcier () : base()
+    {
+        dmg = 5;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

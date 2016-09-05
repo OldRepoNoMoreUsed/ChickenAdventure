@@ -25,7 +25,9 @@ public class Player : MovingObject {
 		InitGame ();
 	}
 
-    private int calculDmg() { return baseAttack + armeEquipe.getDmg(); }
+    private int calculDmg() {
+        return baseAttack + armeEquipe.getDmg();
+    }
 
 	void Awake () {
 		DontDestroyOnLoad (transform.gameObject);
@@ -92,23 +94,6 @@ public class Player : MovingObject {
         Items item = component as Items;
 
         int d = item.getId();
-
-        /*if(d == 1)
-        {
-            Chest chest = component as Chest;
-            chest.onUse();
-        }
-        else if(d == 2)
-        {
-            Boss boss = component as Boss;
-            boss.onUse(); 
-        }
-        else if(d == 3)
-        {
-            Wall wall = component as Wall;
-            wall.onUse();
-        }*/
-
         switch (d)
         {
             case 1:
