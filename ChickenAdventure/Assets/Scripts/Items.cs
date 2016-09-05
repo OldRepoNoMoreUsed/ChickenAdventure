@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Items : MonoBehaviour {
 
-    public int id;
+    public  int Id;
 
 	// Use this for initialization
 	void Start () {
@@ -11,5 +11,5 @@ public class Items : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    public void onUse() { }
+    public void OnUse() { }
 }

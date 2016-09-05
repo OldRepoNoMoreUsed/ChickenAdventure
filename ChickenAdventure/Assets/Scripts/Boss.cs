@@ -5,11 +5,11 @@ public class Boss : Items{
 
 	// Use this for initialization
 	void Start () {
-        id = 2;
+        Id = 2;
 	}
 	
 	// Update is called once per frame
-	public void onUse () {
+	public void OnUse () {
         print("Tu touches le boss !");
 	}
 }

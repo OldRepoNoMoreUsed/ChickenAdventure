@@ -26,7 +26,7 @@ public class Player : MovingObject {
 	}
 
     private int calculDmg() {
-        return baseAttack + armeEquipe.dmg;
+        return baseAttack + armeEquipe.GetDmg();
     }
 
 	void Awake () {
@@ -93,20 +93,20 @@ public class Player : MovingObject {
     {
         Items item = component as Items;
 
-        int d = item.id;
+        int d = item.Id;
         switch (d)
         {
             case 1:
                 Chest chest = component as Chest;
-                chest.onUse();
+                chest.OnUse();
                 break;
             case 2:
                 Boss boss = component as Boss;
-                boss.onUse();
+                boss.OnUse();
                 break;
             case 3:
                 Wall wall = component as Wall;
-                wall.onUse();
+                wall.OnUse();
                 break;
             default:
                 break;

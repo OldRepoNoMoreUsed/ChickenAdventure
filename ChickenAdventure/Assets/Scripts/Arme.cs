@@ -3,6 +3,16 @@ using System.Collections;
 
 public class Arme{
 
-    public int dmg;
+    private int dmg;
+
+    public int GetDmg()
+    {
+        return dmg;
+    }
+
+    public void SetDmg(int e)
+    {
+        dmg = e;
+    }
 
 }

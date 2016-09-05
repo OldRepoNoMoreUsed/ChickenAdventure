@@ -5,11 +5,11 @@ public class Wall : Items {
 
 	// Use this for initialization
 	void Start () {
-        id = 3;
+        Id = 3;
 	}
 	
 	// Update is called once per frame
-	void onUse () {
+	void OnUse () {
         print("Tu heurtes un mur");
 	}
 }

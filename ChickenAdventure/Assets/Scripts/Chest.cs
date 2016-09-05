@@ -11,10 +11,10 @@ public class Chest : Items {
 	void Start () {
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
-        id = 1; 
+        Id = 1; 
 	}
 	
-	public void onUse()
+	public void OnUse()
     {
         if (!open)
         {
