@@ -5,7 +5,7 @@ public class Boss : Items{
 
 	// Use this for initialization
 	void Start () {
-        setId(2);
+        id = 2;
 	}
 	
 	// Update is called once per frame

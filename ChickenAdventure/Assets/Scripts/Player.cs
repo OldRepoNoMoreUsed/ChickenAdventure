@@ -20,7 +20,7 @@ public class Player : MovingObject {
 	}
 
     private int calculDmg() {
-        return baseAttack + armeEquipe.getDmg();
+        return baseAttack + armeEquipe.dmg;
     }
 
 	void Awake () {
@@ -78,7 +78,7 @@ public class Player : MovingObject {
     {
         Items item = component as Items;
 
-        int d = item.getId();
+        int d = item.id;
         switch (d)
         {
             case 1:

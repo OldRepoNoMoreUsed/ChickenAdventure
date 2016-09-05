@@ -5,7 +5,7 @@ public class Wall : Items {
 
 	// Use this for initialization
 	void Start () {
-        setId(3);
+        id = 3;
 	}
 	
 	// Update is called once per frame

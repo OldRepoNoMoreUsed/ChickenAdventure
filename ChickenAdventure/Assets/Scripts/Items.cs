@@ -4,6 +4,7 @@ using System.Collections;
 public class Items : MonoBehaviour {
 
     public int id;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -11,7 +12,4 @@ public class Items : MonoBehaviour {
 
     // Update is called once per frame
     public void onUse() { }
-
-    public int getId() { return id; }
-    public void setId(int i) { id = i; }
 }
