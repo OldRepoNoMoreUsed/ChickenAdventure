@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class Player : MovingObject {
 
     private Animator animator;
+	private Text textHP;
+	private Text textMP;
+
     public int hp = 100;
     public int mp = 100;
     public int baseAttack = 5;
@@ -17,6 +21,8 @@ public class Player : MovingObject {
         animator = GetComponent<Animator>();
         base.Start();
         armeEquipe = new BatonSorcier();
+
+		InitGame ();
 	}
 
     private int calculDmg() { return baseAttack + armeEquipe.getDmg(); }
@@ -71,6 +77,15 @@ public class Player : MovingObject {
         }
 
     }
+
+	void InitGame()
+	{
+		textHP = GameObject.Find ("textHP").GetComponent<Text> ();
+		textMP = GameObject.Find ("textMP").GetComponent<Text> ();
+
+		textHP.text = "Vie : " + hp;
+		textMP.text = "Mana : " + mp;
+	}
 
     protected override void OnCantMove<T>(T component)
     {
