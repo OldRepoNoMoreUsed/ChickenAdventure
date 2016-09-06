@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Player : MovingObject {
 
-    private Animator animator;
+    public  Animator animator;
 	private Text textHP;
 	private Text textMP;
 
@@ -16,9 +16,16 @@ public class Player : MovingObject {
     public Arme armeEquipe;
     public AudioClip ambiance;
     public Arme[] inventaire = new Arme[10];
+    public int FightID { get; set; }
+    public int FightIdMob { get; set; }
+    public bool inFight = false; 
 
-	// Use this for initialization
-	protected override void Start () {
+    public string levelname = "Level name";
+    public float x = 0;
+    public float y = 0;
+
+    // Use this for initialization
+    protected override void Start () {
         animator = GetComponent<Animator>();
         base.Start();
         armeEquipe = new BatonSorcier();
@@ -53,7 +60,12 @@ public class Player : MovingObject {
             vertical = 0;
         }
 
-        if (horizontal != 0 || vertical != 0)
+        if(inFight)
+        {
+            animator.SetTrigger("PlayerWalkLeftTrig");
+        }
+
+        if ((horizontal != 0 || vertical != 0) && !inFight)
         {
             AttemptMove<Items>(horizontal/5.0f, vertical/5.0f);
 
@@ -123,7 +135,7 @@ public class Player : MovingObject {
     {
         bool Value;
 
-        int randomValue = Random.Range(0, 9); 
+        int randomValue = Random.Range(0, 99); 
 
         if(randomValue < 1 )
         {
@@ -135,10 +147,16 @@ public class Player : MovingObject {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-       /* if(other.tag == "Fight")
-        if(RandomFight())
+        if(other.tag == "Fight")
         {
-
-        }*/
+            if (RandomFight())
+            {
+                Application.LoadLevel(levelname);
+                FightID = 2;
+                FightIdMob = 0;
+                
+            }
+        }
+            
     }
 }

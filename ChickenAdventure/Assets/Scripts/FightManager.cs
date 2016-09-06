@@ -12,15 +12,20 @@ public class FightManager : MonoBehaviour {
     public int IdMob;
     public int Column = 8;
     public int Rows = 8;
+    private Player player;
 
     private Transform boardHolder;
     private List<Vector3> gridPosition = new List<Vector3>();
 
 	// Use this for initialization
 	void Start () {
-        Vector3 position = new Vector2(-2.5f, 0);
+        Vector3 position = new Vector2(-2.5f, -0.2f);
 
-        switch (ID)
+        player = GameObject.Find("Player").GetComponent<Player>();
+        player.transform.position = new Vector2(2.5f, -0.5f);
+        player.inFight = true;
+
+        switch (player.FightID)
         {
             case 1:
                 RenderSettings.skybox = Donjon;
@@ -32,27 +37,16 @@ public class FightManager : MonoBehaviour {
                 break;
         }
 
-        if (IdMob == 0)
+        if (player.FightIdMob == 0)
         {
             GameObject ennemy = Boss1;
             Instantiate(ennemy, position, Quaternion.identity);
         }
+        player.animator.SetTrigger("PlayerWalkLeftTrig");
     }
 
-    void InitialiseList()
-    {
-        gridPosition.Clear(); 
-
-        for(int x = 1; x < Column-1;x++)
-        {
-            for(int y = 1; y < Rows-1; y++)
-            {
-                gridPosition.Add(new Vector3(x, y, 0f));
-            }
-        }
-    }
 	
-    public void SetScene(int idFight, int idmob)
+    /*public void SetScene(int idFight, int idmob)
     {
         switch (idFight)
         {
@@ -66,7 +60,7 @@ public class FightManager : MonoBehaviour {
                 break;
         }
 
-        Vector3 position = new Vector3(-1, 1, 1);
+        Vector2 position = new Vector2(-1, 1);
         boardHolder = new GameObject("Board").transform;
 
         if(idmob == 0)
@@ -74,5 +68,5 @@ public class FightManager : MonoBehaviour {
             GameObject ennemy = Ennemy[0];
             Instantiate(ennemy, position, Quaternion.identity);
         }
-    }
+    }*/
 }
