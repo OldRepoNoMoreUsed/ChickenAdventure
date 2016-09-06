@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f3ff8e72cf37714439cb4dcb6bcff1b7
+timeCreated: 1473149235
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Sky: {fileID: 2100000, guid: ce160a7067f80bf4599d1c27a4dc16e2, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
