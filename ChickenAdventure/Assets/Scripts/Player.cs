@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Player : MovingObject {
 
@@ -116,5 +117,28 @@ public class Player : MovingObject {
                 break;
 
         }        
+    }
+
+    bool RandomFight()
+    {
+        bool Value;
+
+        int randomValue = Random.Range(0, 9); 
+
+        if(randomValue < 1 )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+       /* if(other.tag == "Fight")
+        if(RandomFight())
+        {
+
+        }*/
     }
 }
