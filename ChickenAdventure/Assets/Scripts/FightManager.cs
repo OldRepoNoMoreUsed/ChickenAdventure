@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 
 public class FightManager : MonoBehaviour {
@@ -6,15 +7,25 @@ public class FightManager : MonoBehaviour {
     public Material Donjon;
     public Material FightGrass;
     public GameObject[] Ennemy;
+    public GameObject Boss1;
     public int ID;
     public int IdMob;
-    public 
+    public int Column = 8;
+    public int Rows = 8;
+    private Player player;
+
+    private Transform boardHolder;
+    private List<Vector3> gridPosition = new List<Vector3>();
 
 	// Use this for initialization
 	void Start () {
-        Vector3 position = new Vector3(1, 1, 1);
+        Vector3 position = new Vector2(-2.5f, -0.2f);
 
-        switch (ID)
+        player = GameObject.Find("Player").GetComponent<Player>();
+        player.transform.position = new Vector2(2.5f, -0.5f);
+        player.inFight = true;
+
+        switch (player.FightID)
         {
             case 1:
                 RenderSettings.skybox = Donjon;
@@ -26,23 +37,18 @@ public class FightManager : MonoBehaviour {
                 break;
         }
 
-        /*if (IdMob == 0)
+        if (player.FightIdMob == 0)
         {
-            GameObject ennemy = Ennemy[0];
+            GameObject ennemy = Boss1;
             Instantiate(ennemy, position, Quaternion.identity);
-        }*/
+        }
+        player.animator.SetTrigger("PlayerWalkLeftTrig");
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
-    public void SetScene(int idFight, int idmob)
+	
+    /*public void SetScene(int idFight, int idmob)
     {
-        Vector3 position = new Vector3(1, 1, 1);
-
-        switch(idFight)
+        switch (idFight)
         {
             case 1:
                 RenderSettings.skybox = Donjon;
@@ -53,11 +59,14 @@ public class FightManager : MonoBehaviour {
             default:
                 break;
         }
+
+        Vector2 position = new Vector2(-1, 1);
+        boardHolder = new GameObject("Board").transform;
 
         if(idmob == 0)
         {
             GameObject ennemy = Ennemy[0];
             Instantiate(ennemy, position, Quaternion.identity);
         }
-    }
+    }*/
 }
