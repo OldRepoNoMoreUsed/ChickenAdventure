@@ -26,7 +26,7 @@ public class Player : MovingObject {
 	}
 
     private int calculDmg() {
-        return baseAttack + armeEquipe.GetDmg();
+        return baseAttack + armeEquipe.Dmg;
     }
 
 	void Awake () {

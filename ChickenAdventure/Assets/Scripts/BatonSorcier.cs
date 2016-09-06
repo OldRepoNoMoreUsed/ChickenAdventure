@@ -5,7 +5,6 @@ public class BatonSorcier : Arme {
 
 	public BatonSorcier () : base()
     {
-        SetDmg(5);
+        this.Dmg = 5;
 	}
-	
 }

@@ -5,14 +5,15 @@ public class Arme{
 
     private int dmg;
 
-    public int GetDmg()
+    public int Dmg
     {
-        return dmg;
+        get
+        {
+            return dmg;
+        }
+        set
+        {
+            dmg = value;
+        }
     }
-
-    public void SetDmg(int e)
-    {
-        dmg = e;
-    }
-
 }
