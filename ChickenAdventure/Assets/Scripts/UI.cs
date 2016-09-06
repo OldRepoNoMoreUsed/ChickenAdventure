@@ -18,7 +18,7 @@ public class UI : MonoBehaviour {
 
     public Player Player;
 
-	NPCFemale Npc;
+	NPC Npc;
 
 	public Canvas CanvasConv;
 
@@ -26,10 +26,11 @@ public class UI : MonoBehaviour {
 		DontDestroyOnLoad (transform.gameObject);
 	}
 
-	public void StartConversation(NPCFemale Npc, Sprite Face){
+	public void StartConversation(NPC Npc, Sprite Face){
 		this.Npc = Npc;
 		CanvasConv.enabled = true;
 		NPCFace.sprite = Face;
+        Player.inFight = true;
 	}
 
 	public void SaySomething(string Said){
@@ -49,6 +50,7 @@ public class UI : MonoBehaviour {
 	}
 	public void CloseConversation(){
 		CanvasConv.enabled = false;
+        Player.inFight = false;
 	}
 
 	// Use this for initialization

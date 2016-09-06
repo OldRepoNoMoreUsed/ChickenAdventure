@@ -122,8 +122,8 @@ public class Player : MovingObject {
                 wall.OnUse();
                 break;
 			case 4:
-				NPCFemale npcFemale = component as NPCFemale;
-				npcFemale.OnUse ();
+				NPC npc = component as NPC;
+				npc.OnUse ();
 				break;
             default:
                 break;
