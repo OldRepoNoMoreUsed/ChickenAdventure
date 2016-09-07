@@ -27,7 +27,6 @@ public class Chest : Items {
             ui.StartConversation(this);
             ui.SaySomething(text);
             ui.SetAnswer("OK");
-            
             print("Blabla");
             open = true;
         }
