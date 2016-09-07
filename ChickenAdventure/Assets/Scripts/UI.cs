@@ -18,10 +18,18 @@ public class UI : MonoBehaviour {
 
     public Player Player;
 
+	public Button Firespell;
+	public Button Icespell;
+	public Button Thunderspell;
+	public Button Curespell;
+
+
+	FightManager Fm;
 	NPC Npc;
     Chest chest; 
 
 	public Canvas CanvasConv;
+	public Canvas CanvasFight;
 
 	void Awake () {
 		DontDestroyOnLoad (transform.gameObject);
@@ -79,9 +87,23 @@ public class UI : MonoBehaviour {
         Player.inFight = false;
 	}
 
+	public void StartFight(FightManager Fm){
+		this.Fm = Fm;
+		CanvasFight.enabled = true;
+	}
+
+	public void StopFight(){
+		CanvasFight.enabled = false;
+	}
+
+	public void CastSpell(int IdSpell){
+		Fm.CastSpell (IdSpell);
+	}
+
 	// Use this for initialization
 	void Start () {
 		CanvasConv.enabled = false;
+		CanvasFight.enabled = false;
 	}
 	
 	// Update is called once per frame
