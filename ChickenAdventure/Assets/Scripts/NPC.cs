@@ -75,7 +75,7 @@ public class NPC : Items {
 			case 1:
 				Application.LoadLevel (paramAction);
 				break;
-			default:
+            default:
 				break;
 		}
 	}

@@ -21,6 +21,7 @@ public class UI : MonoBehaviour {
     public Player Player;
 
 	NPC Npc;
+    Chest chest; 
 
 	public Canvas CanvasConv;
 
@@ -35,6 +36,18 @@ public class UI : MonoBehaviour {
         Player.inFight = true;
 	}
 
+    public void StartConversation(Chest chest)
+    {
+        this.chest = chest; 
+        CanvasConv.enabled = true;
+        Player.inFight = true; 
+    }
+
+    public void chestAnswer(int btn)
+    {
+        chest.answer(btn);
+    }
+
 	public void SaySomething(string Said){
 		NPCText.text = Said;
 	}
@@ -45,10 +58,23 @@ public class UI : MonoBehaviour {
 		Choice3.GetComponentInChildren<Text> ().text = C;
 	}
 
+    public void SetAnswer(string A)
+    {
+        Choice2.GetComponentInChildren<Text>().text = A;
+       
+        Choice1.enabled = false;
+        Choice3.enabled = false;
+    }
+
 	public void Answer(int Btn){
-		print ("Btn");
-		print (Btn);
-		Npc.Answer (Btn);
+        if(chest != null)
+        {
+            chest.answer(Btn);
+        }
+        else if (Npc != null)
+        {
+            Npc.Answer(Btn);
+        }
 	}
 	public void CloseConversation(){
 		CanvasConv.enabled = false;
