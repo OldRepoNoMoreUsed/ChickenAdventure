@@ -14,6 +14,8 @@ public class FightManager : MonoBehaviour {
     public int Rows = 8;
     private Player player;
 
+	private UI Ui;
+
     private Transform boardHolder;
     private List<Vector3> gridPosition = new List<Vector3>();
 
@@ -45,30 +47,14 @@ public class FightManager : MonoBehaviour {
             Instantiate(ennemy, position, Quaternion.identity);
         }
         player.animator.SetTrigger("PlayerWalkLeftTrig");
+
+		Ui = GameObject.Find ("Canvas").GetComponent<UI>();
+		Ui.StartFight (this);
     }
 
-	
-    /*public void SetScene(int idFight, int idmob)
-    {
-        switch (idFight)
-        {
-            case 1:
-                RenderSettings.skybox = Donjon;
-                break;
-            case 2:
-                RenderSettings.skybox = FightGrass;
-                break;
-            default:
-                break;
-        }
+	public void CastSpell(int IdSpell){
+		print ("Je lance un sort !!");
+		print (IdSpell);
+	}
 
-        Vector2 position = new Vector2(-1, 1);
-        boardHolder = new GameObject("Board").transform;
-
-        if(idmob == 0)
-        {
-            GameObject ennemy = Ennemy[0];
-            Instantiate(ennemy, position, Quaternion.identity);
-        }
-    }*/
 }
