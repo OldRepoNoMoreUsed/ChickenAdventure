@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: b9b1a3d37cb9e0149a3a06918551ce2c
-timeCreated: 1473245195
+guid: f2c637a04f9b24742bd8a2400cf8ae1a
+timeCreated: 1473240968
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: People3_0
-    21300002: People3_1
-    21300004: People3_2
-    21300006: People3_3
-    21300008: People3_4
-    21300010: People3_5
-    21300012: People3_6
-    21300014: People3_7
+    21300000: Evil_0
+    21300002: Evil_1
+    21300004: Evil_2
+    21300006: Evil_3
+    21300008: Evil_4
+    21300010: Evil_5
+    21300012: Evil_6
+    21300014: Evil_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -61,7 +61,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: People3_0
+      name: Evil_0
       rect:
         serializedVersion: 2
         x: 0
@@ -74,7 +74,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: People3_1
+      name: Evil_1
       rect:
         serializedVersion: 2
         x: 144
@@ -87,7 +87,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: People3_2
+      name: Evil_2
       rect:
         serializedVersion: 2
         x: 288
@@ -100,7 +100,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: People3_3
+      name: Evil_3
       rect:
         serializedVersion: 2
         x: 432
@@ -113,7 +113,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: People3_4
+      name: Evil_4
       rect:
         serializedVersion: 2
         x: 0
@@ -126,7 +126,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: People3_5
+      name: Evil_5
       rect:
         serializedVersion: 2
         x: 144
@@ -139,7 +139,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: People3_6
+      name: Evil_6
       rect:
         serializedVersion: 2
         x: 288
@@ -152,7 +152,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: People3_7
+      name: Evil_7
       rect:
         serializedVersion: 2
         x: 432
