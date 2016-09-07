@@ -23,8 +23,8 @@ public class NPC : Items {
     public string Goodbye1;
     public string Goodbye2;
 
-
-
+	public int IdAction;
+	public string paramAction;
 
     // Use this for initialization
     void Start () {
@@ -38,19 +38,13 @@ public class NPC : Items {
 		Ui.StartConversation (this, Face);
 		Ui.SaySomething (Hello);
 		Ui.SetAnswers (Choice0, Choice1, Choice2);
-
-		/*
-		NPCText = GameObject.Find ("NPCText").GetComponent<Text> ();
-		NPCText.enabled = true;
-		NPCText.text = "Je suis une connasse";
-		*/
 	}
 
 	public void Answer(int R){
         if (IndexConv > 0)
         {
             IndexConv = 0;
-            Ui.CloseConversation();
+			EndConversation ();
         }
         else
         {
@@ -74,4 +68,15 @@ public class NPC : Items {
         }
 
     }
+
+	private void EndConversation(){
+		Ui.CloseConversation();
+		switch (IdAction) {
+			case 1:
+				Application.LoadLevel (paramAction);
+				break;
+			default:
+				break;
+		}
+	}
 }

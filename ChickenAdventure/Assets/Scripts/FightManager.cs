@@ -25,9 +25,11 @@ public class FightManager : MonoBehaviour {
         player.transform.position = new Vector2(2.5f, -0.5f);
         player.inFight = true;
 
+		print (player.FightID);
+
         switch (player.FightID)
         {
-            case 1:
+			case 1:
                 RenderSettings.skybox = Donjon;
                 break;
             case 2:

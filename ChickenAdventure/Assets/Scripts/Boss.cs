@@ -7,8 +7,7 @@ public class Boss : Items{
 	void Start () {
         Id = 2;
 	}
-	
-	// Update is called once per frame
+
 	public void OnUse () {
         print("Tu touches le boss !");
 	}

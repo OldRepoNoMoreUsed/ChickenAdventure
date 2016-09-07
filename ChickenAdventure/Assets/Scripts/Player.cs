@@ -113,17 +113,19 @@ public class Player : MovingObject {
                 Chest chest = component as Chest;
                 chest.OnUse();
                 break;
-            case 2:
-                Boss boss = component as Boss;
-                Application.LoadLevel(levelname);
-                FightID = 1;
-                FightIdMob = 0;
+			case 2:
+				FightID = 1;
+				FightIdMob = 0;
+				NPC npc2 = component as NPC;
+				npc2.OnUse ();
                 break;
             case 3:
                 Wall wall = component as Wall;
                 wall.OnUse();
                 break;
 			case 4:
+				FightID = 1;
+				FightIdMob = 0;
 				NPC npc = component as NPC;
 				npc.OnUse ();
 				break;
