@@ -12,6 +12,8 @@ public class Player : MovingObject {
 
     public int hp = 100;
     public int mp = 100;
+	public int xp = 0;
+	public int niveau = 1; 
     public int baseAttack = 5;
     public Arme armeEquipe;
     public AudioClip ambiance;

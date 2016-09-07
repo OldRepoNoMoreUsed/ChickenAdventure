@@ -6,6 +6,8 @@ public class UI : MonoBehaviour {
 
 	public Text textMP;
 	public Text textHP;
+	public Button Save;
+	public Button Load;
 
 	public Image NPCFace;
 	public Text NPCText;
