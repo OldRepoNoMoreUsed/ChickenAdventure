@@ -110,8 +110,10 @@ public class Player : MovingObject {
         switch (d)
         {
             case 1:
-                Chest chest = component as Chest;
-                chest.OnUse();
+                NPC npc3 = component as NPC;
+                npc3.OnUse();
+                /*Chest chest = component as Chest;
+                chest.OnUse();*/
                 break;
 			case 2:
 				FightID = 1;
