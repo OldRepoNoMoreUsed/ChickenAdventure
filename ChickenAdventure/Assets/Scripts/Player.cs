@@ -115,7 +115,9 @@ public class Player : MovingObject {
                 break;
             case 2:
                 Boss boss = component as Boss;
-                boss.OnUse();
+                Application.LoadLevel(levelname);
+                FightID = 1;
+                FightIdMob = 0;
                 break;
             case 3:
                 Wall wall = component as Wall;
@@ -135,7 +137,7 @@ public class Player : MovingObject {
     {
         bool Value;
 
-        int randomValue = Random.Range(0, 99); 
+        int randomValue = Random.Range(0, 9999999); 
 
         if(randomValue < 1 )
         {
