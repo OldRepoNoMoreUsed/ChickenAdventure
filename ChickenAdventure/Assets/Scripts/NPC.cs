@@ -41,6 +41,7 @@ public class NPC : Items {
 	}
 
 	public void Answer(int R){
+        print("Answer");
         if (IndexConv > 0)
         {
             IndexConv = 0;
@@ -71,8 +72,11 @@ public class NPC : Items {
 
 	private void EndConversation(){
 		Ui.CloseConversation();
+        print("End conv");
+        print(IdAction);
 		switch (IdAction) {
 			case 1:
+                print("TP");
 				Application.LoadLevel (paramAction);
 				break;
             default:

@@ -55,14 +55,7 @@ public class UI : MonoBehaviour {
     {
         chest.answer(btn);
     }
-
-    public void SetAnswer(string A)
-    {
-        Choice2.GetComponentInChildren<Text>().text = A;
-
-        Choice1.enabled = false;
-        Choice3.enabled = false;
-    }
+		
 
     public void SaySomething(string Said){
 		NPCText.text = Said;
@@ -76,14 +69,15 @@ public class UI : MonoBehaviour {
 
 
 	public void Answer(int Btn){
-        if(chest != null)
-        {
-            chest.answer(Btn);
-        }
-        else if (Npc != null)
+        if (Npc != null)
         {
             Npc.Answer(Btn);
         }
+        else if(chest != null)
+        {
+            chest.answer(Btn);
+        }
+        
 	}
 	public void CloseConversation(){
 		CanvasConv.enabled = false;
