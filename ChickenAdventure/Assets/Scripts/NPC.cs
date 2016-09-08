@@ -2,14 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class NPC : Items {
+public class NPC : Items
+{
 
-	public Sprite Face;
-	private Text NPCText;
+    public Sprite Face;
+    private Text NPCText;
 
     private int IndexConv = 0;
 
-	private UI Ui;
+    private UI Ui;
 
     public string Hello;
     public string Choice0;
@@ -23,35 +24,52 @@ public class NPC : Items {
     public string Goodbye1;
     public string Goodbye2;
 
-	public int IdAction;
-	public string paramAction;
+    public int IdAction;
+    public string paramAction;
+
+    private AudioSource audio;
+    private AudioSource audioEaster;
+    private bool easterEgg = false;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
-		//Id = 4;
-        Ui = GameObject.Find ("Canvas").GetComponent<UI>();
-	}
+        Ui = GameObject.Find("Canvas").GetComponent<UI>();
 
-	public void OnUse () {
+        if (this.GetComponent<AudioSource>() != null)
+        {
+            audioEaster = GetComponent<AudioSource>();
+            audioEaster.Stop();
+        }
 
-		Ui.StartConversation (this, Face);
-		Ui.SaySomething (Hello);
-		Ui.SetAnswers (Choice0, Choice1, Choice2);
-	}
+    }
 
-	public void Answer(int R){
+    public void OnUse()
+    {
+
+        Ui.StartConversation(this, Face);
+        Ui.SaySomething(Hello);
+        Ui.SetAnswers(Choice0, Choice1, Choice2);
+    }
+
+    public void Answer(int R)
+    {
         print("Answer");
         if (IndexConv > 0)
         {
             IndexConv = 0;
-			EndConversation ();
+            EndConversation();
         }
         else
         {
             switch (R)
             {
                 case 0:
+                    if (this.GetComponent<AudioSource>() != null)
+                    {
+                        easterEgg = true;
+                    }
                     Ui.SaySomething(Answer0);
                     break;
                 case 1:
@@ -70,17 +88,27 @@ public class NPC : Items {
 
     }
 
-	private void EndConversation(){
-		Ui.CloseConversation();
+    private void EndConversation()
+    {
+        Ui.CloseConversation();
         print("End conv");
         print(IdAction);
-		switch (IdAction) {
-			case 1:
+        switch (IdAction)
+        {
+            case 1:
                 print("TP");
-				Application.LoadLevel (paramAction);
-				break;
+                Application.LoadLevel(paramAction);
+                break;
+            case 2:
+                if (easterEgg)
+                {
+                    audio = GameObject.Find("Audio").GetComponent<AudioSource>();
+                    audio.Stop();
+                    audioEaster.Play();
+                }
+                break;
             default:
-				break;
-		}
-	}
+                break;
+        }
+    }
 }
