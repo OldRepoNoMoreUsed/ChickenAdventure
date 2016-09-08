@@ -28,7 +28,7 @@ public class Chest : Items
             audio.Play();
             ui.StartConversation(this);
             ui.SaySomething(text);
-            ui.SetAnswer("OK");
+			ui.SetAnswers("Seulement ça !!","OK", "Merci beaucoup");
 
             print("Blabla");
             open = true;
@@ -41,6 +41,7 @@ public class Chest : Items
 
     public void answer(int btn)
     {
+        print("close");
         ui.CloseConversation();
     }
 }
