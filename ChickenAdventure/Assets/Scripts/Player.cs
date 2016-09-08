@@ -14,13 +14,13 @@ public class Player : MovingObject {
     public int mp = 100;
 	public int xp = 0;
 	public int niveau = 1; 
-    public int baseAttack = 5;
+    public int baseAttack = 10;
     public Arme armeEquipe;
     public AudioClip ambiance;
     public Arme[] inventaire = new Arme[10];
     public int FightID { get; set; }
     public int FightIdMob { get; set; }
-    public bool inFight = false; 
+    public bool inFight = false;
 
     public string levelname = "Level name";
     public float x = 0;
@@ -35,8 +35,22 @@ public class Player : MovingObject {
 		InitGame ();
 	}
 
-    private int calculDmg() {
-        return baseAttack + armeEquipe.Dmg;
+    public int calculDmg(int def) {
+        print("Calcul");
+        print(baseAttack);
+        print(armeEquipe.Dmg);
+        return baseAttack + armeEquipe.Dmg-def;
+    }
+
+    public void DecreaseHP(int attack)
+    {
+        hp -= attack;
+
+        if(hp <= 0)
+        {
+            print("personnage mort");
+        }
+        //Ajout teleport si <0
     }
 
 	void Awake () {
