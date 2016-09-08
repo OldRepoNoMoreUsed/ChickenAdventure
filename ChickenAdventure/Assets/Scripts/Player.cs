@@ -3,18 +3,20 @@ using System.Collections;
 using System;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class Player : MovingObject {
 
     public  Animator animator;
 	private Text textHP;
 	private Text textMP;
+    private Text lvl;
 
     public int hp = 100;
     public int mp = 100;
 	public int xp = 0;
 	public int niveau = 1; 
-    public int baseAttack = 10;
+    public int baseAttack = 50;
     public Arme armeEquipe;
     public AudioClip ambiance;
     public Arme[] inventaire = new Arme[10];
@@ -26,6 +28,12 @@ public class Player : MovingObject {
     public float x = 0;
     public float y = 0;
 
+    public Vector2 oldPos;
+    private float xact;
+    private float yact;
+    public String oldLevel;
+    public bool win { get; set; }
+
     // Use this for initialization
     protected override void Start () {
         animator = GetComponent<Animator>();
@@ -36,21 +44,31 @@ public class Player : MovingObject {
 	}
 
     public int calculDmg(int def) {
-        print("Calcul");
-        print(baseAttack);
-        print(armeEquipe.Dmg);
-        return baseAttack + armeEquipe.Dmg-def;
+        return (baseAttack + armeEquipe.Dmg-def)*niveau;
     }
 
-    public void DecreaseHP(int attack)
+    public bool DecreaseHP(int attack)
     {
         hp -= attack;
 
         if(hp <= 0)
         {
-            print("personnage mort");
+            return true;
         }
-        //Ajout teleport si <0
+        return false;
+    }
+
+    public void IncreaseHP()
+    {
+        if(hp < 100)
+        {
+            hp += calculDmg(0) * 2;
+        }
+
+        if(hp > 100)
+        {
+            hp = 100;
+        }
     }
 
 	void Awake () {
@@ -65,6 +83,16 @@ public class Player : MovingObject {
 
     // Update is called once per frame
     void Update () {
+
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "FightScene")
+        {
+            oldLevel = scene.name;
+            xact = this.transform.position.x;
+            yact = this.transform.position.y;
+            oldPos = new Vector2(xact, yact);
+        }
+
         int horizontal = 0;
         int vertical = 0;
 
@@ -113,10 +141,18 @@ public class Player : MovingObject {
 	{
 		textHP = GameObject.Find ("textHP").GetComponent<Text> ();
 		textMP = GameObject.Find ("textMP").GetComponent<Text> ();
+        lvl = GameObject.Find("Lvl").GetComponent<Text>();
 
-		textHP.text = "Vie : " + hp;
-		textMP.text = "Mana : " + mp;
+
+        ChangeUI();
 	}
+
+    public void ChangeUI()
+    {
+        textHP.text = "Vie : " + hp;
+        textMP.text = "Mana : " + mp;
+        lvl.text = "Niveau : " + niveau;
+    }
 
     protected override void OnCantMove<T>(T component)
     {
@@ -126,7 +162,10 @@ public class Player : MovingObject {
         switch (d)
         {
             case 1:
+                Arme a; 
                 Chest chest = component as Chest;
+                a = chest.getArme();
+                armeEquipe = a;
                 chest.OnUse();
                 break;
 			case 2:
@@ -136,10 +175,15 @@ public class Player : MovingObject {
 				npc2.OnUse ();
                 break;
             case 3:
-                Wall wall = component as Wall;
-                wall.OnUse();
+                hp = 100;
+                mp = 100;
+                ChangeUI();
+                print(hp);
+                NPC manatower = component as NPC;
+                manatower.OnUse();
                 break;
 			case 4:
+                print("truc");
 				FightID = 1;
 				FightIdMob = 0;
 				NPC npc = component as NPC;
@@ -155,7 +199,7 @@ public class Player : MovingObject {
     {
         bool Value;
 
-        int randomValue = Random.Range(0, 9999999); 
+        int randomValue = Random.Range(0, 500); 
 
         if(randomValue < 1 )
         {
@@ -173,10 +217,31 @@ public class Player : MovingObject {
             {
                 Application.LoadLevel(levelname);
                 FightID = 2;
-                FightIdMob = 0;
-                
+                FightIdMob = 1;
             }
+        }     
+    }
+
+    public void Dance()
+    {
+        int i = 0;
+        while(i < 10000)
+        {
+            animator.SetTrigger("PlayerWalkLeftTrig");
+            animator.SetTrigger("PlayerWalkDownTrig");
+            animator.SetTrigger("PlayerWalkRightTrig");
+            animator.SetTrigger("PlayerWalkUpTrig");
+            i++; 
         }
-            
+    }
+
+    public void gainXp()
+    {
+        xp++;
+        if(xp == niveau)
+        {
+            niveau++;
+            xp = 0;
+        }
     }
 }

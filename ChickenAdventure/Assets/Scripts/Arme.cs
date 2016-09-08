@@ -18,4 +18,10 @@ public class Arme{
             dmg = value;
         }
     }
+
+    public int coutFeu { get; set; }
+    public int coutGlace { get; set; }
+    public int coutFoudre { get; set; }
+    public int coutSoin { get; set; }
+
 }

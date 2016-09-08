@@ -29,7 +29,7 @@ public class NPC : Items {
     // Use this for initialization
     void Start () {
 
-		Id = 4;
+		//Id = 4;
         Ui = GameObject.Find ("Canvas").GetComponent<UI>();
 	}
 

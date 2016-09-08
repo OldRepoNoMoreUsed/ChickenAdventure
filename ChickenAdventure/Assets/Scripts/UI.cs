@@ -6,6 +6,7 @@ public class UI : MonoBehaviour {
 
 	public Text textMP;
 	public Text textHP;
+    public Text lvl;
 	public Button Save;
 	public Button Load;
 
