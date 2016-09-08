@@ -1,21 +1,20 @@
 fileFormatVersion: 2
-guid: 4b59670ba59be334b99cb0ef90339239
-timeCreated: 1473153923
+guid: 8370040a881c38b48a27469c258efaff
+timeCreated: 1473321186
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: xn4qBY0_24
-    21300002: xn4qBY0_27
-    21300004: xn4qBY0_28
-    21300006: xn4qBY0_29
-    21300008: xn4qBY0_30
-    21300010: xn4qBY0_31
-    21300012: xn4qBY0_32
-    21300014: xn4qBY0_33
-    21300016: xn4qBY0_42
-    21300018: xn4qBY0_51
-    21300020: xn4qBY0_52
-    21300022: xn4qBY0_53
+    21300000: Goblin_3
+    21300002: Goblin_4
+    21300004: Goblin_5
+    21300006: Goblin_6
+    21300008: Goblin_7
+    21300010: Goblin_8
+    21300012: Goblin_13
+    21300014: Goblin_18
+    21300016: Goblin_27
+    21300018: Goblin_36
+    21300020: Goblin_45
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -65,10 +64,101 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: xn4qBY0_24
+      name: Goblin_3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 420
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Goblin_4
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 420
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Goblin_5
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 420
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Goblin_6
       rect:
         serializedVersion: 2
         x: 504
+        y: 420
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Goblin_7
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 420
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Goblin_8
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 420
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Goblin_13
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 336
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Goblin_18
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 252
         width: 84
         height: 84
@@ -78,7 +168,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: xn4qBY0_27
+      name: Goblin_27
       rect:
         serializedVersion: 2
         x: 0
@@ -91,88 +181,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: xn4qBY0_28
+      name: Goblin_36
       rect:
         serializedVersion: 2
-        x: 84
-        y: 168
-        width: 84
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: xn4qBY0_29
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 168
-        width: 84
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: xn4qBY0_30
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 168
-        width: 84
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: xn4qBY0_31
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 168
-        width: 84
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: xn4qBY0_32
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 168
-        width: 84
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: xn4qBY0_33
-      rect:
-        serializedVersion: 2
-        x: 504
-        y: 168
-        width: 84
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: xn4qBY0_42
-      rect:
-        serializedVersion: 2
-        x: 504
+        x: 0
         y: 84
         width: 84
         height: 84
@@ -182,36 +194,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: xn4qBY0_51
+      name: Goblin_45
       rect:
         serializedVersion: 2
-        x: 504
-        y: 0
-        width: 84
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: xn4qBY0_52
-      rect:
-        serializedVersion: 2
-        x: 588
-        y: 0
-        width: 84
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: xn4qBY0_53
-      rect:
-        serializedVersion: 2
-        x: 672
+        x: 0
         y: 0
         width: 84
         height: 84
