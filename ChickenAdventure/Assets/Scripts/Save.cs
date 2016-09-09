@@ -22,6 +22,9 @@ public class Save : MonoBehaviour {
 		data.xp = player.xp;
 		data.niveau = player.niveau;
 		data.armeEquipe = player.armeEquipe;
+		data.oldlevel = player.oldLevel;
+		data.posX = player.oldPos.x;
+		data.posY = player.oldPos.y;
 		binaryF.Serialize (file, data);
 		file.Close ();
 	}
@@ -39,7 +42,12 @@ public class Save : MonoBehaviour {
 			player.xp = data.xp;
 			player.niveau = data.niveau;
 			player.armeEquipe = data.armeEquipe;
-			Application.LoadLevel ("cyril");
+			player.oldLevel = data.oldlevel;
+			player.oldPos.x = data.posX;
+			player.oldPos.y = data.posY;
+			Application.LoadLevel (player.oldLevel);
+			player.transform.position = new Vector2 (player.oldPos.x, player.oldPos.y);
+			player.ChangeUI ();
 		}
 	}
 }
@@ -51,4 +59,7 @@ class PlayerData {
 	public int xp;
 	public int niveau;
 	public Arme armeEquipe;
+	public string oldlevel;
+	public float posX;
+	public float posY;
 }
